@@ -1,0 +1,7 @@
+indentation: 2
+
+excluded:
+  - bin
+  - Carthage
+  - DerviedData
+  - Pods

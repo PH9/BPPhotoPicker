@@ -1,0 +1,10 @@
+# fileHeader
+--header strip
+
+# indent
+--indent 2
+
+# wrap
+--maxwidth 120
+
+--exclude bin,Carthage,Frameworks,Pods

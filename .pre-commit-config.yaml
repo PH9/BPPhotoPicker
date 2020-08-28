@@ -1,0 +1,38 @@
+repos:
+- repo: local
+  hooks:
+  - id: format
+    name: Format and Lint
+    entry: bin/format.sh
+    language: system
+    types: [swift]
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.2.0
+  hooks:
+  - id: check-added-large-files
+  - id: trailing-whitespace
+  - id: end-of-file-fixer
+  - id: check-case-conflict
+  - id: check-json
+  - id: check-yaml
+  - id: check-symlinks
+  - id: check-merge-conflict
+  - id: check-toml
+  - id: check-xml
+  - id: check-yaml
+  - id: double-quote-string-fixer
+  - id: detect-private-key
+
+- repo: https://github.com/codespell-project/codespell
+  rev: v1.17.1
+  hooks:
+    - id: codespell
+
+# To customize commitizen, please read:
+# https://commitizen-tools.github.io/commitizen/customization/
+- repo: https://github.com/commitizen-tools/commitizen
+  rev: master
+  hooks:
+    - id: commitizen
+      stages: [commit-msg]
