@@ -4,8 +4,8 @@ import UIKit
 class ViewController: UIViewController {
   @IBOutlet var previewImageView: UIImageView!
 
-  @IBAction func presentActionSheet(_: Any) {
-    presentPickingMethodController()
+  @IBAction func presentActionSheet(_ sender: UIView) {
+    presentPickingMethodController(sender)
   }
 
   @IBAction func autoPickerHandler(_: Any) {}
@@ -14,12 +14,13 @@ class ViewController: UIViewController {
 // MARK: - PickingMethodController
 
 extension ViewController: PickingMethodControllerDelegate {
-  private func presentPickingMethodController() {
+  private func presentPickingMethodController(_ sender: UIView) {
     let vc = PickingMethodController(
       title: "เปลี่ยนรูปประจำตัว",
       message: PickingMethodController.getDefaultMessage(),
       preferredStyle: .actionSheet
     )
+    vc.popoverPresentationController?.sourceView = sender
     vc.addDefaultActions()
     vc.delegate = self
     present(vc, animated: true, completion: nil)
