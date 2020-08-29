@@ -1,0 +1,18 @@
+#### Xcode ####
+## User settings
+xcuserdata/
+
+## Build result
+build/
+DerivedData/
+
+##### Fastlane ####
+## fastlane specific
+fastlane/report.xml
+
+## scan temporary files
+fastlane/test_output
+
+#### Carthage ####
+Carthage/Build
+Carthage/Checkout
