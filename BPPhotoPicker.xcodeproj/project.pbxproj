@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1651AD8024FA4E430002AE3F /* PickingMethodControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651AD7F24FA4E430002AE3F /* PickingMethodControllerTests.swift */; };
+		1651AD8224FA53B70002AE3F /* PickerMethodControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1651AD8124FA53B70002AE3F /* PickerMethodControllerSpy.swift */; };
 		16998AB124F958E500A02453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16998AB024F958E500A02453 /* AppDelegate.swift */; };
 		16998AB324F958E500A02453 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16998AB224F958E500A02453 /* SceneDelegate.swift */; };
 		16998AB524F958E500A02453 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16998AB424F958E500A02453 /* ViewController.swift */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		1651AD7F24FA4E430002AE3F /* PickingMethodControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickingMethodControllerTests.swift; sourceTree = "<group>"; };
+		1651AD8124FA53B70002AE3F /* PickerMethodControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerMethodControllerSpy.swift; sourceTree = "<group>"; };
 		16998AAD24F958E500A02453 /* BPPhotoPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPPhotoPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16998AB024F958E500A02453 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16998AB224F958E500A02453 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				16DA3C6C24F9593600A7C766 /* Info.plist */,
 				16DA3C6B24F9593600A7C766 /* PhotoPicker.h */,
+				1651AD8124FA53B70002AE3F /* PickerMethodControllerSpy.swift */,
 				16CCDB4B24FA051F00708361 /* PickingMethodController.swift */,
 				1651AD7F24FA4E430002AE3F /* PickingMethodControllerTests.swift */,
 			);
@@ -398,6 +401,7 @@
 			files = (
 				1651AD8024FA4E430002AE3F /* PickingMethodControllerTests.swift in Sources */,
 				16998AC824F958E600A02453 /* BPPhotoPickerTests.swift in Sources */,
+				1651AD8224FA53B70002AE3F /* PickerMethodControllerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

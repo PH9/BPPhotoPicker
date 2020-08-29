@@ -13,6 +13,9 @@ Pod::Spec.new do |s|
   s.source_files = "PhotoPicker/PickingMethodController.swift"
 
   s.test_spec 'Tests' do |test_spec|
-    test_spec.source_files = 'PhotoPicker/PickingMethodControllerTests.swift'
+    test_spec.source_files = [
+      'PhotoPicker/PickingMethodControllerTests.swift',
+      'PhotoPicker/PickingMethodControllerSpy.swift'
+    ]
   end  
 end

@@ -25,7 +25,7 @@ open class PickingMethodController: UIAlertController {
     addAction(cancelAction)
   }
 
-  private func askForCameraPermission(_: UIAlertAction) {
+  open func askForCameraPermission(_: UIAlertAction) {
     switch AVCaptureDevice.authorizationStatus(for: .video) {
     case .authorized:
       openCamera()

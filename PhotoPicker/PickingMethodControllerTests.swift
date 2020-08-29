@@ -2,7 +2,7 @@
 import XCTest
 
 class PickerMethodControllerTests: XCTestCase {
-  let sut = PickingMethodController(title: "", message: "", preferredStyle: .actionSheet)
+  let sut = PickerMethodControllerSpy(title: "", message: "", preferredStyle: .actionSheet)
 
   func testAddDefaultAction_withAllSourceTypeAvailable() {
     var sourceTypeParam: [UIImagePickerController.SourceType] = []
@@ -30,5 +30,21 @@ class PickerMethodControllerTests: XCTestCase {
     XCTAssertEqual(sut.actions.count, 1)
     XCTAssertEqual("ยกเลิก", sut.actions[0].title)
     XCTAssertEqual(sut.actions[0].style, .cancel)
+  }
+
+  func testTapButtons() {
+    let spy = PickingMethodControllerSpyDelegate()
+    sut.delegate = spy
+    sut.addDefaultActions(isSourceTypeAvailable: { _ in true })
+
+    sut.tapButton(atIndex: 0)
+    XCTAssertEqual(sut.askForCameraPermissionCalledCount, 1)
+
+    sut.tapButton(atIndex: 1)
+
+    XCTAssertEqual(sut.openPhotoLibraryCalledCount, 1)
+    XCTAssertEqual(spy.pickerMethodWantToPresentCalledCount, 1)
+    XCTAssertEqual(spy.latestPickingController, sut)
+    XCTAssert(spy.latestWantToPresentController is UIImagePickerController)
   }
 }
