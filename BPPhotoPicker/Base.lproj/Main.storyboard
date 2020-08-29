@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,6 +11,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BPPhotoPicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ye1-kA-4VW"/>
+                        <viewControllerLayoutGuide type="bottom" id="fzy-tK-gfS"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,19 +62,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Yxh-Gy-8pg" firstAttribute="width" secondItem="pbW-3z-Bmq" secondAttribute="width" id="01g-bm-IbJ"/>
-                            <constraint firstItem="fnB-GS-NPB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CRX-mU-hxy"/>
+                            <constraint firstItem="fnB-GS-NPB" firstAttribute="top" secondItem="ye1-kA-4VW" secondAttribute="bottom" id="CRX-mU-hxy"/>
                             <constraint firstItem="pbW-3z-Bmq" firstAttribute="top" secondItem="fnB-GS-NPB" secondAttribute="bottom" constant="20" id="CuW-Bs-TQM"/>
                             <constraint firstItem="gXr-c7-syj" firstAttribute="top" secondItem="Yxh-Gy-8pg" secondAttribute="bottom" constant="20" id="GRy-5d-lnv"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gXr-c7-syj" secondAttribute="bottom" constant="20" id="J4q-GS-n6d"/>
-                            <constraint firstItem="Yxh-Gy-8pg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JGs-kj-kcj"/>
-                            <constraint firstItem="pbW-3z-Bmq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QzK-jF-9tC"/>
+                            <constraint firstItem="Yxh-Gy-8pg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JGs-kj-kcj"/>
+                            <constraint firstItem="pbW-3z-Bmq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QzK-jF-9tC"/>
                             <constraint firstItem="gXr-c7-syj" firstAttribute="width" secondItem="Yxh-Gy-8pg" secondAttribute="width" id="Tnc-Rx-ztQ"/>
-                            <constraint firstItem="gXr-c7-syj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VmW-1g-TBL"/>
-                            <constraint firstItem="fnB-GS-NPB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f6k-F9-kIp"/>
+                            <constraint firstItem="gXr-c7-syj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VmW-1g-TBL"/>
+                            <constraint firstItem="fnB-GS-NPB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="f6k-F9-kIp"/>
                             <constraint firstItem="Yxh-Gy-8pg" firstAttribute="top" secondItem="pbW-3z-Bmq" secondAttribute="bottom" constant="20" id="h9X-TB-hgr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fnB-GS-NPB" secondAttribute="trailing" id="lKh-af-e4c"/>
+                            <constraint firstAttribute="trailing" secondItem="fnB-GS-NPB" secondAttribute="trailing" id="lKh-af-e4c"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="previewImageView" destination="fnB-GS-NPB" id="hXq-ec-gaG"/>

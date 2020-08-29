@@ -19,7 +19,11 @@ class ViewController: UIViewController {
       return
     }
 
-    UIApplication.shared.open(applicationSettingURL)
+    if #available(iOS 10.0, *) {
+      UIApplication.shared.open(applicationSettingURL)
+    } else {
+      UIApplication.shared.openURL(applicationSettingURL)
+    }
   }
 }
 

@@ -26,6 +26,10 @@ open class PickingMethodController: UIAlertController {
   }
 
   open func askForCameraPermission(_: UIAlertAction) {
+    askForCameraPermission()
+  }
+
+  open func askForCameraPermission() {
     switch AVCaptureDevice.authorizationStatus(for: .video) {
     case .authorized:
       openCamera()
@@ -82,7 +86,11 @@ open class PickingMethodController: UIAlertController {
       return
     }
 
-    UIApplication.shared.open(applicationSettingURL)
+    if #available(iOS 10.0, *) {
+      UIApplication.shared.open(applicationSettingURL)
+    } else {
+      UIApplication.shared.openURL(applicationSettingURL)
+    }
   }
 }
 

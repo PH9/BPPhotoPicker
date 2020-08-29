@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'PhotoPicker'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.license = { :type => 'MIT License' }
   s.homepage = 'https://github.com/PH9/BPPhotoPicker'
   s.authors = { 'Wasith Theerapattrathamrong' => 'wastiht.@gmail.com' }
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/PH9/BPPhotoPicker.git', :tag => s.version }
   s.swift_version = '5.2.4'
 
-  s.ios.deployment_target  = '10.0'
+  s.ios.deployment_target  = '8.0'
 
   s.source_files = "PhotoPicker/PickingMethodController.swift"
 
