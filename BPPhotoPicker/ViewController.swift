@@ -9,28 +9,40 @@ class ViewController: UIViewController {
   }
 
   @IBAction func autoPickerHandler(_: Any) {}
+
+  @IBAction func gotoApplicationSetting(_: Any) {
+    guard let applicationSettingURL = URL(string: UIApplication.openSettingsURLString) else {
+      return
+    }
+
+    guard UIApplication.shared.canOpenURL(applicationSettingURL) else {
+      return
+    }
+
+    UIApplication.shared.open(applicationSettingURL)
+  }
 }
 
 // MARK: - PickingMethodController
 
 extension ViewController: PickingMethodControllerDelegate {
   private func presentPickingMethodController(_ sender: UIView) {
-    let vc = PickingMethodController(
+    let controller = PickingMethodController(
       title: "เปลี่ยนรูปประจำตัว",
       message: PickingMethodController.getDefaultMessage(),
       preferredStyle: .actionSheet
     )
-    vc.popoverPresentationController?.sourceView = sender
-    vc.addDefaultActions()
-    vc.delegate = self
-    present(vc, animated: true, completion: nil)
+    controller.popoverPresentationController?.sourceView = sender
+    controller.addDefaultActions()
+    controller.delegate = self
+    present(controller, animated: true, completion: nil)
   }
 
   func pickingMethod(_: PickingMethodController) {}
 
-  func pickingMethod(_: PickingMethodController, wantToPresent vc: UIImagePickerController) {
-    vc.delegate = self
-    present(vc, animated: true, completion: nil)
+  func pickingMethod(_: PickingMethodController, wantToPresent controller: UIViewController) {
+    (controller as? UIImagePickerController)?.delegate = self
+    present(controller, animated: true, completion: nil)
   }
 }
 

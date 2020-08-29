@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbW-3z-Bmq">
-                                <rect key="frame" x="79" y="340" width="162" height="40"/>
+                                <rect key="frame" x="54.5" y="300" width="211" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TzV-Vq-gSs"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxh-Gy-8pg">
-                                <rect key="frame" x="79" y="400" width="162" height="40"/>
+                                <rect key="frame" x="54.5" y="360" width="211" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JIh-33-BOb"/>
                                 </constraints>
@@ -36,26 +36,39 @@
                                 <state key="normal" title="Auto handle"/>
                                 <connections>
                                     <action selector="autoPickerHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Oh-nw-ssh"/>
-                                    <action selector="presentActionSheet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qVD-pw-je2"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fnB-GS-NPB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fnB-GS-NPB" secondAttribute="height" multiplier="1:1" priority="750" id="o0f-wi-BkH"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXr-c7-syj">
+                                <rect key="frame" x="54.5" y="420" width="211" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NtS-dz-AG7"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                <state key="normal" title="Go to application's setting"/>
+                                <connections>
+                                    <action selector="gotoApplicationSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cIE-Ou-bv9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Yxh-Gy-8pg" firstAttribute="width" secondItem="pbW-3z-Bmq" secondAttribute="width" id="01g-bm-IbJ"/>
                             <constraint firstItem="fnB-GS-NPB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CRX-mU-hxy"/>
                             <constraint firstItem="pbW-3z-Bmq" firstAttribute="top" secondItem="fnB-GS-NPB" secondAttribute="bottom" constant="20" id="CuW-Bs-TQM"/>
+                            <constraint firstItem="gXr-c7-syj" firstAttribute="top" secondItem="Yxh-Gy-8pg" secondAttribute="bottom" constant="20" id="GRy-5d-lnv"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gXr-c7-syj" secondAttribute="bottom" constant="20" id="J4q-GS-n6d"/>
                             <constraint firstItem="Yxh-Gy-8pg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JGs-kj-kcj"/>
                             <constraint firstItem="pbW-3z-Bmq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QzK-jF-9tC"/>
+                            <constraint firstItem="gXr-c7-syj" firstAttribute="width" secondItem="Yxh-Gy-8pg" secondAttribute="width" id="Tnc-Rx-ztQ"/>
+                            <constraint firstItem="gXr-c7-syj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VmW-1g-TBL"/>
                             <constraint firstItem="fnB-GS-NPB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f6k-F9-kIp"/>
                             <constraint firstItem="Yxh-Gy-8pg" firstAttribute="top" secondItem="pbW-3z-Bmq" secondAttribute="bottom" constant="20" id="h9X-TB-hgr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Yxh-Gy-8pg" secondAttribute="bottom" constant="20" id="iWW-kC-mBU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fnB-GS-NPB" secondAttribute="trailing" id="lKh-af-e4c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -66,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="131.25" y="137.5"/>
         </scene>
     </scenes>
 </document>

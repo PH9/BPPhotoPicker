@@ -60,5 +60,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>อนุญาตเพื่อใช้กล้องถ่ายรูปในเครื่องคุณ เพื่อใช้กับโปรแกรม</string>
 </dict>
 </plist>
