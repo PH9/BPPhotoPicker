@@ -14,7 +14,6 @@
 		16998ABA24F958E600A02453 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16998AB924F958E600A02453 /* Assets.xcassets */; };
 		16998ABD24F958E600A02453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16998ABB24F958E600A02453 /* LaunchScreen.storyboard */; };
 		16998AC824F958E600A02453 /* BPPhotoPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16998AC724F958E600A02453 /* BPPhotoPickerTests.swift */; };
-		16B4217A24FA0B1600772C8C /* AutoPickerHandlerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4217924FA0B1600772C8C /* AutoPickerHandlerController.swift */; };
 		16CCDB4C24FA051F00708361 /* PickingMethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCDB4B24FA051F00708361 /* PickingMethodController.swift */; };
 		16DA3C7224F9593600A7C766 /* PhotoPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DA3C6924F9593600A7C766 /* PhotoPicker.framework */; };
 		16DA3C7924F9593600A7C766 /* PhotoPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DA3C7824F9593600A7C766 /* PhotoPickerTests.swift */; };
@@ -80,7 +79,6 @@
 		16998AC324F958E600A02453 /* BPPhotoPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BPPhotoPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16998AC724F958E600A02453 /* BPPhotoPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPPhotoPickerTests.swift; sourceTree = "<group>"; };
 		16998AC924F958E600A02453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16B4217924FA0B1600772C8C /* AutoPickerHandlerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPickerHandlerController.swift; sourceTree = "<group>"; };
 		16CCDB4B24FA051F00708361 /* PickingMethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickingMethodController.swift; sourceTree = "<group>"; };
 		16DA3C6924F9593600A7C766 /* PhotoPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DA3C6B24F9593600A7C766 /* PhotoPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPicker.h; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 			children = (
 				16DA3C6B24F9593600A7C766 /* PhotoPicker.h */,
 				16DA3C6C24F9593600A7C766 /* Info.plist */,
-				16B4217924FA0B1600772C8C /* AutoPickerHandlerController.swift */,
 				16CCDB4B24FA051F00708361 /* PickingMethodController.swift */,
 			);
 			path = PhotoPicker;
@@ -405,7 +402,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				16CCDB4C24FA051F00708361 /* PickingMethodController.swift in Sources */,
-				16B4217A24FA0B1600772C8C /* AutoPickerHandlerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

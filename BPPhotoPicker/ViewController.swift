@@ -38,8 +38,6 @@ extension ViewController: PickingMethodControllerDelegate {
     present(controller, animated: true, completion: nil)
   }
 
-  func pickingMethod(_: PickingMethodController) {}
-
   func pickingMethod(_: PickingMethodController, wantToPresent controller: UIViewController) {
     (controller as? UIImagePickerController)?.delegate = self
     present(controller, animated: true, completion: nil)

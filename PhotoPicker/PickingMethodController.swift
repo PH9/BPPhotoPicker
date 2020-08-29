@@ -2,7 +2,6 @@ import AVKit
 import UIKit
 
 public protocol PickingMethodControllerDelegate: AnyObject {
-  func pickingMethod(_ controller: PickingMethodController)
   func pickingMethod(_ controller: PickingMethodController, wantToPresent controller: UIViewController)
 }
 
@@ -64,7 +63,7 @@ open class PickingMethodController: UIAlertController {
 
   open func showRestrictedDialog() {
     let controller = createCameraRestrictAlertController()
-    self.delegate?.pickingMethod(self, wantToPresent: controller)
+    delegate?.pickingMethod(self, wantToPresent: controller)
   }
 
   open func showApplicationDoesNotSupportDialog() {
