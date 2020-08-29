@@ -33,34 +33,74 @@ open class PickingMethodController: UIAlertController {
         if granted {
           self.openCamera()
         } else {
-          // TODO:
+          self.askingForPermissionGrant()
         }
       }
     case .denied:
       askingForPermissionGrant()
-      return
     case .restricted:
-      // TODO: Show dialog to ask permission from
-      return
+      showRestrictedDialog()
     @unknown default:
-      // TODO: Show dialog that app doesn't support
-      return
+      showApplicationDoesNotSupportDialog()
     }
   }
 
-  private func openCamera() {
-    let controller = PickingMethodController.createCameraController()
+  open func openCamera() {
+    let controller = createCameraController()
     delegate?.pickingMethod(self, wantToPresent: controller)
   }
 
-  private func openPhotoLibrary(_: UIAlertAction) {
-    let controller = PickingMethodController.createPhotoLibraryPicker()
+  open func openPhotoLibrary(_: UIAlertAction) {
+    let controller = createPhotoLibraryPicker()
     delegate?.pickingMethod(self, wantToPresent: controller)
   }
 
   open func askingForPermissionGrant() {
     let controller = createAskingForPermissionViewController()
+    DispatchQueue.main.async {
+      self.delegate?.pickingMethod(self, wantToPresent: controller)
+    }
+  }
+
+  open func showRestrictedDialog() {
+    let controller = createCameraRestrictAlertController()
+    self.delegate?.pickingMethod(self, wantToPresent: controller)
+  }
+
+  open func showApplicationDoesNotSupportDialog() {
+    let controller = createApplicationDoesNotSupport()
     delegate?.pickingMethod(self, wantToPresent: controller)
+  }
+
+  open func gotoApplicationSetting(_: Any) {
+    guard let applicationSettingURL = URL(string: UIApplication.openSettingsURLString) else {
+      return
+    }
+
+    guard UIApplication.shared.canOpenURL(applicationSettingURL) else {
+      return
+    }
+
+    UIApplication.shared.open(applicationSettingURL)
+  }
+}
+
+// MARK: - Factory
+
+extension PickingMethodController {
+  open func getDefaultMessage() -> String {
+    PickingMethodController.getDefaultMessage()
+  }
+
+  public static func getDefaultMessage() -> String {
+    var string = "คุณสามารถ"
+    var separator = ""
+    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+      string += "ถ่ายรูปใหม่ หรือ "
+      separator = "\n"
+    }
+
+    return string + "เลือกรูป\(separator)ที่มีอยู่แล้วจากอัลบั้มรูป"
   }
 
   open func createAskingForPermissionViewController() -> UIAlertController {
@@ -80,42 +120,39 @@ open class PickingMethodController: UIAlertController {
     return controller
   }
 
-  open func gotoApplicationSetting(_: Any) {
-    guard let applicationSettingURL = URL(string: UIApplication.openSettingsURLString) else {
-      return
-    }
-
-    guard UIApplication.shared.canOpenURL(applicationSettingURL) else {
-      return
-    }
-
-    UIApplication.shared.open(applicationSettingURL)
-  }
-}
-
-extension PickingMethodController {
-  public static func getDefaultMessage() -> String {
-    var string = "คุณสามารถ"
-    var separator = ""
-    if UIImagePickerController.isSourceTypeAvailable(.camera) {
-      string += "ถ่ายรูปใหม่ หรือ "
-      separator = "\n"
-    }
-
-    return string + "เลือกรูป\(separator)ที่มีอยู่แล้วจากอัลบั้มรูป"
-  }
-
-  public static func createCameraController() -> UIImagePickerController {
+  open func createCameraController() -> UIImagePickerController {
     let controller = UIImagePickerController()
     controller.allowsEditing = true
     controller.sourceType = .camera
     return controller
   }
 
-  public static func createPhotoLibraryPicker() -> UIImagePickerController {
+  open func createPhotoLibraryPicker() -> UIImagePickerController {
     let controller = UIImagePickerController()
     controller.allowsEditing = true
     controller.sourceType = .photoLibrary
+    return controller
+  }
+
+  open func createCameraRestrictAlertController() -> UIAlertController {
+    let controller = UIAlertController(
+      title: "กรุณาติดต่อผู้ปกครองของท่าน",
+      message: "ให้อณุญาตใช้งานกล้องถ่ายภาพ",
+      preferredStyle: .alert
+    )
+    let cancelAction = UIAlertAction(title: "ตกลง", style: .default, handler: nil)
+    controller.addAction(cancelAction)
+    return controller
+  }
+
+  open func createApplicationDoesNotSupport() -> UIAlertController {
+    let controller = UIAlertController(
+      title: "แอปพลิเคชันยังไม่รอบรับรายการดังกล่าว",
+      message: "โปรดลองอัพเดทแอปพลิเคชัน",
+      preferredStyle: .alert
+    )
+    let cancelAction = UIAlertAction(title: "ตกลง", style: .default, handler: nil)
+    controller.addAction(cancelAction)
     return controller
   }
 }
