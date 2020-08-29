@@ -2,19 +2,21 @@ import AVKit
 import UIKit
 
 public protocol PickingMethodControllerDelegate: AnyObject {
-  func pickingMethod(_ controller: PickingMethodController, wantToPresent controller: UIViewController)
+  func pickingMethod(_ pickerController: PickingMethodController, wantToPresent controller: UIViewController)
 }
 
 open class PickingMethodController: UIAlertController {
   public weak var delegate: PickingMethodControllerDelegate?
 
-  open func addDefaultActions() {
-    if UIImagePickerController.isSourceTypeAvailable(.camera) {
-      let action = UIAlertAction(title: "ใช้กล้องถ่ายรูป", style: .default, handler: openCamera(_:))
+  open func addDefaultActions(isSourceTypeAvailable: (_ sourceType: UIImagePickerController.SourceType)
+    -> Bool = UIImagePickerController.isSourceTypeAvailable)
+  {
+    if isSourceTypeAvailable(.camera) {
+      let action = UIAlertAction(title: "ใช้กล้องถ่ายรูป", style: .default, handler: askForCameraPermission(_:))
       addAction(action)
     }
 
-    if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+    if isSourceTypeAvailable(.photoLibrary) {
       let action = UIAlertAction(title: "เลือกรูปจากอัลบั้ม", style: .default, handler: openPhotoLibrary(_:))
       addAction(action)
     }
@@ -23,7 +25,7 @@ open class PickingMethodController: UIAlertController {
     addAction(cancelAction)
   }
 
-  private func openCamera(_: UIAlertAction) {
+  private func askForCameraPermission(_: UIAlertAction) {
     switch AVCaptureDevice.authorizationStatus(for: .video) {
     case .authorized:
       openCamera()

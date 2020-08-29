@@ -1,5 +1,8 @@
 indentation: 2
 
+disabled_rules:
+  - opening_brace
+
 excluded:
   - bin
   - Carthage
