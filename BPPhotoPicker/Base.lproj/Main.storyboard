@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,60 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BPPhotoPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbW-3z-Bmq">
+                                <rect key="frame" x="20" y="340" width="280" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="TzV-Vq-gSs"/>
+                                </constraints>
+                                <state key="normal" title="Show Action Sheet"/>
+                                <connections>
+                                    <action selector="presentActionSheet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c8l-OB-PZm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxh-Gy-8pg">
+                                <rect key="frame" x="20" y="400" width="280" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JIh-33-BOb"/>
+                                </constraints>
+                                <state key="normal" title="Auto handle"/>
+                                <connections>
+                                    <action selector="autoPickerHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Oh-nw-ssh"/>
+                                    <action selector="presentActionSheet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qVD-pw-je2"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fnB-GS-NPB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fnB-GS-NPB" secondAttribute="height" multiplier="1:1" id="o0f-wi-BkH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yxh-Gy-8pg" secondAttribute="trailing" constant="20" id="7DT-7x-ji8"/>
+                            <constraint firstItem="pbW-3z-Bmq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C1A-YX-U9T"/>
+                            <constraint firstItem="fnB-GS-NPB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CRX-mU-hxy"/>
+                            <constraint firstItem="pbW-3z-Bmq" firstAttribute="top" secondItem="fnB-GS-NPB" secondAttribute="bottom" constant="20" id="CuW-Bs-TQM"/>
+                            <constraint firstItem="Yxh-Gy-8pg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Iqg-ja-U9x"/>
+                            <constraint firstItem="fnB-GS-NPB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f6k-F9-kIp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pbW-3z-Bmq" secondAttribute="trailing" constant="20" id="gxT-Px-eXq"/>
+                            <constraint firstItem="Yxh-Gy-8pg" firstAttribute="top" secondItem="pbW-3z-Bmq" secondAttribute="bottom" constant="20" id="h9X-TB-hgr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fnB-GS-NPB" secondAttribute="trailing" id="lKh-af-e4c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="previewImageView" destination="fnB-GS-NPB" id="hXq-ec-gaG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
