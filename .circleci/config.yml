@@ -1,0 +1,52 @@
+# For a detailed guide to building and testing on iOS, read the docs:
+# https://circleci.com/docs/2.0/testing-ios/
+
+version: 2.1
+
+environment: &environment
+  working_directory: ~/PhotoPicker
+  environment:
+    BUNDLE_PATH: vendor/bundle
+    FL_OUTPUT_DIR: output
+    LC_ALL: en_US.UTF-8
+    LANG: en_US.UTF-8
+
+jobs:
+  framework-tests:
+    <<: *environment
+    macos:
+      xcode: 11.6.0
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          name: Restore Bundler
+          keys:
+            - v1-gems-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Install Bundler
+          command: bundle check || bundle install
+          environment:
+            BUNDLE_JOBS: 4
+            BUNDLE_RETRY: 3
+
+      - save_cache:
+          name: Cache Bundler
+          key: v1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run: bundle exec fastlane scan_framework
+
+      - store_test_results:
+          path: output
+      - store_artifacts:
+          path: output
+          destination: scan-output
+
+workflows:
+  "Framework Unit Tests":
+    jobs:
+      - framework-tests
