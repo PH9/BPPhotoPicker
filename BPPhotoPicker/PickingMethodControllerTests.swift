@@ -1,4 +1,4 @@
-@testable import PhotoPicker
+@testable import BPPhotoPicker
 import XCTest
 
 class PickerMethodControllerTests: XCTestCase {

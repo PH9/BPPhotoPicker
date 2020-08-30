@@ -1,4 +1,4 @@
-import PhotoPicker
+import BPPhotoPicker
 import UIKit
 
 class ViewController: UIViewController {

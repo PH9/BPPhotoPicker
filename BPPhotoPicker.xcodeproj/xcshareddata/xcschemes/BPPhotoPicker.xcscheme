@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "16998AAC24F958E500A02453"
-               BuildableName = "BPPhotoPicker.app"
-               BlueprintName = "BPPhotoPicker"
+               BuildableName = "BPPhotoPickerApp.app"
+               BlueprintName = "BPPhotoPickerApp"
                ReferencedContainer = "container:BPPhotoPicker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -36,8 +36,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "16998AC224F958E600A02453"
-               BuildableName = "BPPhotoPickerTests.xctest"
-               BlueprintName = "BPPhotoPickerTests"
+               BuildableName = "BPPhotoPickerAppTests.xctest"
+               BlueprintName = "BPPhotoPickerAppTests"
                ReferencedContainer = "container:BPPhotoPicker.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -48,8 +48,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "16DA3C7024F9593600A7C766"
-               BuildableName = "PhotoPickerTests.xctest"
-               BlueprintName = "PhotoPickerTests"
+               BuildableName = "BPPhotoPickerTests.xctest"
+               BlueprintName = "BPPhotoPickerTests"
                ReferencedContainer = "container:BPPhotoPicker.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -70,8 +70,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "16998AAC24F958E500A02453"
-            BuildableName = "BPPhotoPicker.app"
-            BlueprintName = "BPPhotoPicker"
+            BuildableName = "BPPhotoPickerApp.app"
+            BlueprintName = "BPPhotoPickerApp"
             ReferencedContainer = "container:BPPhotoPicker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -87,8 +87,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "16998AAC24F958E500A02453"
-            BuildableName = "BPPhotoPicker.app"
-            BlueprintName = "BPPhotoPicker"
+            BuildableName = "BPPhotoPickerApp.app"
+            BlueprintName = "BPPhotoPickerApp"
             ReferencedContainer = "container:BPPhotoPicker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

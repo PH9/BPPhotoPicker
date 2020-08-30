@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "16DA3C6824F9593600A7C766"
-               BuildableName = "PhotoPicker.framework"
-               BlueprintName = "PhotoPicker"
+               BuildableName = "BPPhotoPicker.framework"
+               BlueprintName = "BPPhotoPicker"
                ReferencedContainer = "container:BPPhotoPicker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -36,8 +36,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "16DA3C7024F9593600A7C766"
-               BuildableName = "PhotoPickerTests.xctest"
-               BlueprintName = "PhotoPickerTests"
+               BuildableName = "BPPhotoPickerTests.xctest"
+               BlueprintName = "BPPhotoPickerTests"
                ReferencedContainer = "container:BPPhotoPicker.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "16DA3C6824F9593600A7C766"
-            BuildableName = "PhotoPicker.framework"
-            BlueprintName = "PhotoPicker"
+            BuildableName = "BPPhotoPicker.framework"
+            BlueprintName = "BPPhotoPicker"
             ReferencedContainer = "container:BPPhotoPicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
